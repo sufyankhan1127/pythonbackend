@@ -100,3 +100,47 @@ with open("test.txt", "r") as file:
 # type hints are a feature in Python that allow you to specify the expected data types of function arguments and return values. This can help improve code readability and catch potential errors during development. In this example, we define a function called add1 that takes two integer arguments and returns an integer result. The type hints indicate that both a and b should be integers, and the return value should also be an integer.
 def add1(a:int, b:int) -> int:
     return a + b
+
+
+
+import asyncio
+
+async def greet():
+    print("Hello, World!")
+
+# print("Before calling greet()")
+# greet()  # This will not run the coroutine, it will just create a coroutine object
+print("After calling greet()")
+asyncio.run(greet())
+
+import asyncio
+
+async def greet():
+    print("Starting")
+
+    await asyncio.sleep(2)
+
+    print("Finished")
+
+
+asyncio.run(greet())
+
+
+async def task1():
+    await asyncio.sleep(2)
+    print("Task 1 finished")
+
+
+async def task2():
+    await asyncio.sleep(1)
+    print("Task 2 finished")
+
+
+async def main():
+    await asyncio.gather(
+        task1(),
+        task2()
+    )
+
+
+asyncio.run(main())
