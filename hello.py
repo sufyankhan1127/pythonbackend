@@ -153,7 +153,7 @@ asyncio.run(main())
 # environment variables
 
 
-def decorator(func):
+def decorator1(func):
     def wrapper():
         print("before decorator")
         func()
@@ -161,9 +161,24 @@ def decorator(func):
     return wrapper
 
 
-@decorator
+@decorator1
 def my_function():
     print("Hello, World!")
 
 
 my_function()
+
+
+# yield in python
+def count():
+
+    yield 3
+    yield 1
+    yield 2
+
+
+generator = count()
+
+print(next(generator))
+print(next(generator))
+print(next(generator))
