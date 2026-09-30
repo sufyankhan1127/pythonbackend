@@ -102,7 +102,7 @@ def add1(a:int, b:int) -> int:
     return a + b
 
 
-
+# asyncio in Python is a library that provides support for asynchronous programming. It allows you to write concurrent code using the async/await syntax, which can help improve the performance of I/O-bound tasks by allowing other tasks to run while waiting for I/O operations to complete. In this example, we define an asynchronous function called greet that prints "Hello, World!" to the console. We then use asyncio.run() to run the greet coroutine, which will execute the function and print the message.
 import asyncio
 
 async def greet():
@@ -144,3 +144,26 @@ async def main():
 
 
 asyncio.run(main())
+
+
+# context manager
+# yeild
+# decorators
+# generators
+# environment variables
+
+
+def decorator(func):
+    def wrapper():
+        print("before decorator")
+        func()
+        print("after decorator")
+    return wrapper
+
+
+@decorator
+def my_function():
+    print("Hello, World!")
+
+
+my_function()
