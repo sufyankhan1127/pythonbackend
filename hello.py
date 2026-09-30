@@ -1,12 +1,10 @@
-def greet():
-    print("Hello World")
-greet()
 
-def greet(name):
-    print("Hello "+name)
-    
-greet("Sufyan")
+def add(*numbers):
+    total=0
 
+    for number in numbers:
+        total += number
+    return total
 
-
-greet("arfat")
+print(add(10,20,30))
+print(add(10,20,30,40,50))
